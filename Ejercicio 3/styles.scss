@@ -1,0 +1,54 @@
+@import "./_variables";
+
+body {
+  font-family: $font-family;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  body {
+    background-color: black;
+  }
+  .app-container {
+    background-color: white;
+    margin: $space-1;
+    padding: $space-1;
+    height: $app-height;
+  }
+  .menu {
+    flex-direction: column;
+    .item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.app-container {
+  .title {
+    font-size: $font-size-title;
+    padding: $space-1 0px;
+    font-weight: 600;
+  }
+}
+.menu {
+  background-color: $primary-color;
+  color: $font-color;
+  display: flex;
+  justify-content: space-between;
+
+  .item {
+    list-style-type: none;
+    margin: 0;
+    padding: $space-1 $space-1 * 2;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}

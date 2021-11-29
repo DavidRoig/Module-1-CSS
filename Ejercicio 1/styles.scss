@@ -1,0 +1,55 @@
+$primary-color: red;
+$secondary-color: blue;
+$terciary-color: green;
+$base-text-color: white;
+
+@mixin createThemeRules($color) {
+  display: flex;
+  .box {
+    background-color: $color;
+  }
+
+  @for $i from 1 to 5 {
+    .darken-#{$i} {
+      background-color: darken($color, $i * 5%);
+    }
+
+    .lighten-#{$i} {
+      background-color: lighten($color, $i * 5%);
+    }
+
+    :not(.base-color) .color-box-text {
+      color: invert($color);
+    }
+  }
+}
+
+.container-1 {
+  @include createThemeRules($primary-color);
+}
+.container-2 {
+  @include createThemeRules($secondary-color);
+}
+.container-3 {
+  @include createThemeRules($terciary-color);
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  padding: 60px 5px;
+  margin: 5px;
+  border-radius: 0.5rem;
+  justify-content: center;
+}
+
+.base-color {
+  flex: 2;
+  .color-box-text {
+    color: $base-text-color;
+  }
+}
+
+.color-box-text {
+  font-family: system-ui;
+}

@@ -1,0 +1,8 @@
+$primary-color: red;
+$principal-font: "Helvetica";
+$secondary-font: "Courier New";
+$border-radious: 2px;
+
+@mixin boxShadow {
+  box-shadow: -10px 10px 15px 2px black;
+}

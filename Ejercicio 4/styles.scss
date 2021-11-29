@@ -1,0 +1,67 @@
+@import "variables";
+
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: $card-width;
+  grid-template-rows: $image-height auto;
+  grid-template-areas:
+    "image"
+    "content";
+  width: $card-width;
+  border: 1px solid gray;
+
+  .image {
+    grid-area: "image";
+    background-image: url("assets/boat.jpg");
+    background-repeat: round;
+    height: $image-height;
+  }
+
+  .content {
+    grid-area: "content";
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas:
+      "title"
+      "text"
+      "published"
+      "button";
+    row-gap: $space-2;
+    padding: $space-2;
+
+    .title {
+      grid-area: "title";
+      font-size: $font-title-size;
+      padding: $space-2 0;
+    }
+    .text {
+      line-height: 2rem;
+    }
+
+    .published-info {
+      grid-area: "published";
+      justify-self: end;
+      .label {
+        font-weight: 600;
+      }
+      .date {
+        color: $primary-color;
+      }
+    }
+
+    .button {
+      grid-area: "button";
+      background: $button-color;
+      color: white;
+      width: 100%;
+      font-size: $font-button-size;
+      border: 0;
+      padding: $space-2;
+      cursor: pointer;
+    }
+  }
+}

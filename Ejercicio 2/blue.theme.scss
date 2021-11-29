@@ -1,0 +1,8 @@
+$primary-color: blue;
+$principal-font: "Times New Roman";
+$secondary-font: "Georgia";
+$border-radious: 5px;
+
+@mixin boxShadow {
+  box-shadow: 10px 10px 15px 2px black;
+}
